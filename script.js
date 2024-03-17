@@ -3,24 +3,31 @@ const btn = document.getElementById('check-btn');
 let textInputValue = ';'
 let convertedText = '';
 
+function convertText(inputString) {
+    // Convert to Lowercase String
+    let lowerCaseString = inputString.toLowerCase();
+    // Remove All Non-Alphanumeric Characters 
+    return lowerCaseString.replace(/[^a-zA-Z0-9]/g, '');
+};
+
 function compareText() {
     textInputValue = textInputEl.value;
     // Check If Text Input is empty
     if (textInputValue === '') {
         alert('Please input a value');
     } else {
-        console.log(textInputValue);
+        console.log('before remove:', textInputValue);
+        console.log('after remove:', convertText(textInputValue));
     }
-}
+};
 
 // Event Listeners
 btn.addEventListener('click', compareText);
 
 
 /* Pseudokod 
-Om användaren klickar på knappen utan att skriva in en text => alert "Please input a value". 
-Ta in text från input field. 
 Ta bort alla icke alfabetiska characters ex. punkter, mellanrum och symboler. 
+Konvertera hela texten till lower case
 Använd en metod som vänder på textInput och sparar in i en variabel, convertedText. 
 Jämför textInput med convertedText
 
