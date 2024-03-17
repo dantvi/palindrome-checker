@@ -32,6 +32,7 @@ function compareText() {
         } else {
             resultTextEl.textContent = `${textInputValue} is not a palindrome`
         }
+        textInputEl.value = '';
     }
 };
 
